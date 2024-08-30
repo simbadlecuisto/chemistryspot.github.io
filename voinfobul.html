@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chem Spot - Catalogue de Matières Premières Pharmaceutiques</title>
+    <style>
+        /* Styles précédents */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .header {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo {
+            width: 150px;
+            height: auto;
+        }
+        .nav-menu {
+            display: flex;
+            list-style-type: none;
+        }
+        .nav-menu li {
+            margin-left: 20px;
+        }
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .search-form {
+            display: flex;
+            margin-left: 20px;
+        }
+        .search-form input {
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px 0 0 5px;
+        }
+        .search-form button {
+            padding: 5px 10px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        .main-content {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .supplier-section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f0f8ff;
+            border-radius: 5px;
+        }
+        .supplier-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .supplier-details, .supplier-contact {
+            flex: 1;
+        }
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .product-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+        }
+        .product-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .product-info {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            width: 200px;
+            display: none;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .product-card:hover .product-info {
+            display: block;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/chemspotV1-dt6tDoOKp1wAyi8oRMzxzufIVBfiu9.png" alt="Chem Spot Logo" class="logo">
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#catalogue">Catalogue</a></li>
+                    <li><a href="#fournisseurs">Fournisseurs</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <form class="search-form">
+                <input type="text" placeholder="Rechercher un produit...">
+                <button type="submit">Rechercher</button>
+            </form>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="supplier-section">
+            <h2>Fournisseur en vedette : Cooper</h2>
+            <div class="supplier-info">
+                <div class="supplier-details">
+                    <h3>Cooper</h3>
+                    <p><strong>Localisation :</strong> Paris, France</p>
+                    <p><strong>Certifications :</strong> ISO 9001, BPF (Bonnes Pratiques de Fabrication)</p>
+                </div>
+                <div class="supplier-contact">
+                    <h3>Contact principal</h3>
+                    <p><strong>Téléphone :</strong> +33 1 45 86 70 00</p>
+                    <p><strong>Email :</strong> contact@cooper.fr</p>
+                </div>
+            </div>
+            <h3>Produits de Cooper</h3>
+            <div class="product-list">
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=150&width=200" alt="Acide acétylsalicylique">
+                    <h4>Acide acétylsalicylique</h4>
+                    <p>Principe actif anti-inflammatoire</p>
+                    <a href="https://www.cooper.fr/produit/acide-acetylsalicylique" target="_blank" rel="noopener noreferrer">Voir sur Cooper</a>
+                    <div class="product-info">
+                        <p><strong>Poids moléculaire :</strong> 180.16 g/mol</p>
+                        <p><strong>Viscosité :</strong> N/A (solide)</p>
+                        <p><strong>Pureté :</strong> ≥99.0%</p>
+                        <p><strong>Prix :</strong> 45€/kg</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=150&width=200" alt="Paracétamol">
+                    <h4>Paracétamol</h4>
+                    <p>Analgésique et antipyrétique</p>
+                    <a href="https://www.cooper.fr/produit/paracetamol" target="_blank" rel="noopener noreferrer">Voir sur Cooper</a>
+                    <div class="product-info">
+                        <p><strong>Poids moléculaire :</strong> 151.16 g/mol</p>
+                        <p><strong>Viscosité :</strong> N/A (solide)</p>
+                        <p><strong>Pureté :</strong> ≥98.0%</p>
+                        <p><strong>Prix :</strong> 38€/kg</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=150&width=200" alt="Ibuprofène">
+                    <h4>Ibuprofène</h4>
+                    <p>Anti-inflammatoire non stéroïdien</p>
+                    <a href="https://www.cooper.fr/produit/ibuprofene" target="_blank" rel="noopener noreferrer">Voir sur Cooper</a>
+                    <div class="product-info">
+                        <p><strong>Poids moléculaire :</strong> 206.29 g/mol</p>
+                        <p><strong>Viscosité :</strong> N/A (solide)</p>
+                        <p><strong>Pureté :</strong> ≥98.5%</p>
+                        <p><strong>Prix :</strong> 52€/kg</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="/placeholder.svg?height=150&width=200" alt="Lactose monohydraté">
+                    <h4>Lactose monohydraté</h4>
+                    <p>Excipient couramment utilisé</p>
+                    <a href="https://www.cooper.fr/produit/lactose-monohydrate" target="_blank" rel="noopener noreferrer">Voir sur Cooper</a>
+                    <div class="product-info">
+                        <p><strong>Poids moléculaire :</strong> 360.31 g/mol</p>
+                        <p><strong>Viscosité :</strong> N/A (solide)</p>
+                        <p><strong>Pureté :</strong> ≥99.0%</p>
+                        <p><strong>Prix :</strong> 15€/kg</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2023 Chem Spot. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Script pour la gestion de la recherche (simulation)
+        const searchForm = document.querySelector('.search-form');
+        searchForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const searchTerm = e.target.querySelector('input').value;
+            alert(`Recherche effectuée pour : ${searchTerm}`);
+        });
+
+        // Script pour améliorer l'accessibilité des infobulles
+        const productCards = document.querySelectorAll('.product-card');
+        productCards.forEach(card => {
+            const infoButton = document.createElement('button');
+            infoButton.textContent = 'Info';
+            infoButton.className = 'info-button';
+            infoButton.setAttribute('aria-label', 'Afficher les informations du produit');
+            
+            const productInfo = card.querySelector('.product-info');
+            let isInfoVisible = false;
+
+            infoButton.addEventListener('click', () => {
+                isInfoVisible = !isInfoVisible;
+                productInfo.style.display = isInfoVisible ? 'block' : 'none';
+                infoButton.setAttribute('aria-expanded', isInfoVisible);
+            });
+
+            card.appendChild(infoButton);
+        });
+    </script>
+</body>
+</html>
